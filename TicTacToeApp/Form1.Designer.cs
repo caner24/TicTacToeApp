@@ -49,6 +49,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblMinimax = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.lblMinimaxO = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -220,7 +224,7 @@
             // 
             this.lblMinimax.AutoSize = true;
             this.lblMinimax.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinimax.Location = new System.Drawing.Point(45, 165);
+            this.lblMinimax.Location = new System.Drawing.Point(47, 165);
             this.lblMinimax.Name = "lblMinimax";
             this.lblMinimax.Size = new System.Drawing.Size(17, 18);
             this.lblMinimax.TabIndex = 20;
@@ -238,12 +242,56 @@
             this.label11.Text = "Reset";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
+            // lblMinimaxO
+            // 
+            this.lblMinimaxO.AutoSize = true;
+            this.lblMinimaxO.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinimaxO.Location = new System.Drawing.Point(605, 165);
+            this.lblMinimaxO.Name = "lblMinimaxO";
+            this.lblMinimaxO.Size = new System.Drawing.Size(17, 18);
+            this.lblMinimaxO.TabIndex = 23;
+            this.lblMinimaxO.Text = "0";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(557, 134);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(111, 18);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Minimax State";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial Black", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(45, 102);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(28, 28);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "X";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial Black", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(593, 103);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(29, 28);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "O";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Coral;
-            this.ClientSize = new System.Drawing.Size(662, 499);
+            this.ClientSize = new System.Drawing.Size(672, 499);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.lblMinimaxO);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lblMinimax);
             this.Controls.Add(this.label10);
@@ -295,6 +343,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblMinimax;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblMinimaxO;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
     }
 }
 
