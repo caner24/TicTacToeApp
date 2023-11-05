@@ -85,66 +85,159 @@ namespace TicTacToeApp
 
                     }
                     yanyanaVeAltAltaDurum_X(number2);
+                    caprazDurum_X(number2);
+                    caprazDurum_O(number2);
                 }
 
 
             }
         }
-        void yanYanaDurum_O(int number)
+        void caprazDurum_X(int number)
         {
-            if (number != 0 && number != 8 && number != 5 && number != 3 && number != 6 && number != 2)
+            if (number == 8 || number == 4 || number == 0)
             {
-                if (buttons[number].Text == "O" && buttons[number - 1].Text == "O" || buttons[number + 1].Text == "O")
+                if ((buttons[4].Text == "X" && buttons[8].Text == "X") || (buttons[4].Text == "X" && buttons[0].Text == "X") || (buttons[0].Text == "X" && buttons[8].Text == "X"))
                 {
-                    if (buttons[number - 1].Text != "X" && buttons[number + 1].Text != "X")
+                    if (buttons[4].Text != "O" && buttons[8].Text != "O" && buttons[0].Text != "O")
+                        lblMinimax.Text = "1";
+                    else
+                        lblMinimax.Text = "0";
+                }
+                if (buttons[8].Text == "X" && buttons[4].Text == "X" && buttons[0].Text == "X")
+                {
+                    MessageBox.Show("Sayi Kazanildi");
+                }
+            }
+            else if (number == 2 || number == 6 || number == 4)
+            {
+                if ((buttons[4].Text == "X" && buttons[6].Text == "X") || (buttons[4].Text == "X" && buttons[2].Text == "X") || (buttons[2].Text == "X" && buttons[6].Text == "X"))
+                {
+                    if (buttons[2].Text != "O" && buttons[6].Text != "O" && buttons[4].Text != "O")
+                        lblMinimax.Text = "1";
+                    else
+                        lblMinimax.Text = "0";
+                }
+                if (buttons[2].Text == "X" && buttons[6].Text == "X" && buttons[4].Text == "X")
+                {
+                    MessageBox.Show("Sayi Kazanildi");
+                }
+            }
+        }
+
+        void caprazDurum_O(int number)
+        {
+            if (number == 8 || number == 4 || number == 0)
+            {
+                if ((buttons[4].Text == "O" && buttons[8].Text == "O") || (buttons[4].Text == "O" && buttons[0].Text == "O") || (buttons[0].Text == "O" && buttons[8].Text == "O"))
+                {
+                    if (buttons[4].Text != "X" && buttons[8].Text != "X" && buttons[0].Text != "X")
                         lblMinimaxO.Text = "1";
                     else
                         lblMinimaxO.Text = "0";
                 }
+                if (buttons[8].Text == "O" && buttons[4].Text == "O" && buttons[0].Text == "O")
+                {
+                    MessageBox.Show("Sayi Kazanildi");
+                }
+            }
+            else if (number == 2 || number == 6 || number == 4)
+            {
+                if ((buttons[4].Text == "O" && buttons[6].Text == "O") || (buttons[4].Text == "O" && buttons[2].Text == "O") || (buttons[2].Text == "O" && buttons[6].Text == "O"))
+                {
+                    if (buttons[2].Text != "X" && buttons[6].Text != "X" && buttons[4].Text != "X")
+                        lblMinimax.Text = "1";
+                    else
+                        lblMinimax.Text = "0";
+                }
+                if (buttons[2].Text == "O" && buttons[6].Text == "O" && buttons[4].Text == "O")
+                {
+                    MessageBox.Show("Sayi Kazanildi");
+                }
+            }
+        }
+
+        void yanYanaDurum_O(int number2)
+        {
+            if (number2 != 0 && number2 != 8 && number2 != 5 && number2 != 3 && number2 != 6 && number2 != 2)
+            {
+                if (buttons[number2].Text == "O" && buttons[number2 - 1].Text == "O" || buttons[number2 + 1].Text == "O")
+                {
+                    if (buttons[number2 - 1].Text != "X" && buttons[number2 + 1].Text != "X")
+                        lblMinimaxO.Text = "1";
+                    else
+                        lblMinimaxO.Text = "0";
+                }
+                else if ((buttons[7].Text == "O" && buttons[4].Text == "O") || (buttons[7].Text == "O" && buttons[1].Text == "O") || (buttons[4].Text == "O" && buttons[1].Text == "O"))
+                    if (buttons[7].Text != "X" && buttons[4].Text != "X" && buttons[1].Text != "O")
+                        lblMinimaxO.Text = "1";
+                    else
+                        lblMinimaxO.Text = "0";
                 else
                 {
                     lblMinimaxO.Text = "0";
                 }
-                if (buttons[number - 1].Text == "O" && buttons[number + 1].Text == "O")
+                if (buttons[number2 - 1].Text == "O" && buttons[number2 + 1].Text == "O")
+                {
+                    MessageBox.Show("Sayi Kaybedildi");
+                }
+                else if (buttons[7].Text == "O" && buttons[4].Text == "O" && buttons[1].Text == "O")
                 {
                     MessageBox.Show("Sayi Kaybedildi");
                 }
             }
-            else if (number == 0 || number == 3 || number == 6)
+            else if (number2 == 0 || number2 == 3 || number2 == 6)
             {
-                if (buttons[number].Text == "O" && buttons[number + 1].Text == "O" || buttons[number + 2].Text == "O")
+                if (buttons[number2].Text == "O" && buttons[number2 + 1].Text == "O" || buttons[number2 + 2].Text == "O")
                 {
-                    if (buttons[number + 1].Text != "X" && buttons[number + 2].Text != "X")
+                    if (buttons[number2 + 1].Text != "X" && buttons[number2 + 2].Text != "X")
                         lblMinimaxO.Text = "1";
                     else
                         lblMinimaxO.Text = "0";
                 }
+                else if ((buttons[0].Text == "O" && buttons[3].Text == "O") || (buttons[3].Text == "O" && buttons[6].Text == "O") || (buttons[0].Text == "O" && buttons[6].Text == "O"))
+                    if (buttons[0].Text != "X" && buttons[3].Text != "X" && buttons[6].Text != "X")
+                        lblMinimaxO.Text = "1";
+                    else
+                        lblMinimaxO.Text = "0";
                 else
                 {
                     lblMinimaxO.Text = "0";
                 }
 
-                if (buttons[number + 1].Text == "O" && buttons[number + 2].Text == "O")
+                if (buttons[number2 + 1].Text == "O" && buttons[number2 + 2].Text == "O")
+                {
+                    MessageBox.Show("Sayi Kaybedildi");
+                }
+                else if (buttons[0].Text == "O" && buttons[3].Text == "O" && buttons[6].Text == "O")
                 {
                     MessageBox.Show("Sayi Kaybedildi");
                 }
 
             }
-            else if (number == 8 || number == 5 || number == 2)
+            else if (number2 == 8 || number2 == 5 || number2 == 2)
             {
-                if (buttons[number].Text == "O" && buttons[number - 1].Text == "O" || buttons[number - 2].Text == "O")
+                if (buttons[number2].Text == "O" && buttons[number2 - 1].Text == "O" || buttons[number2 - 2].Text == "O")
                 {
-                    if (buttons[number - 1].Text != "X" && buttons[number - 2].Text != "X")
+                    if (buttons[number2 - 1].Text != "X" && buttons[number2 - 2].Text != "X")
                         lblMinimaxO.Text = "1";
 
                     else
                         lblMinimaxO.Text = "0";
                 }
+                else if ((buttons[8].Text == "O" && buttons[5].Text == "O") || (buttons[5].Text == "O" && buttons[2].Text == "O") || (buttons[8].Text == "O" && buttons[2].Text == "O"))
+                    if (buttons[8].Text != "X" && buttons[5].Text != "X" && buttons[2].Text != "X")
+                        lblMinimaxO.Text = "1";
+                    else
+                        lblMinimaxO.Text = "0";
                 else
                 {
                     lblMinimaxO.Text = "0";
                 }
-                if (buttons[number - 1].Text == "O" && buttons[number - 2].Text == "O")
+                if (buttons[number2 - 1].Text == "O" && buttons[number2 - 2].Text == "O")
+                {
+                    MessageBox.Show("Sayi Kaybedildi");
+                }
+                else if (buttons[8].Text == "O" && buttons[5].Text == "O" && buttons[2].Text == "O")
                 {
                     MessageBox.Show("Sayi Kaybedildi");
                 }
